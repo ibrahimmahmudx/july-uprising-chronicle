@@ -6,38 +6,38 @@ import dictatorSmall from "@/assets/dictator-small.png";
 import { Calendar, Clock, Users, ArrowRight } from "lucide-react";
 
 const stats = [
-  { icon: Calendar, label: "মোট ঘটনা", value: "১২০+", color: "text-primary", note: "" },
-  { icon: Clock, label: "আন্দোলনের দিন", value: "২৬", color: "text-primary", note: "" },
-  { icon: Users, label: "শহীদ", value: "১০০০+", color: "text-accent", note: "এই সংখ্যা নিয়মিত আপডেট হচ্ছে" },
+  { icon: Calendar, label: "Total Events", value: "120+", color: "text-primary", note: "" },
+  { icon: Clock, label: "Days of Protest", value: "26", color: "text-primary", note: "" },
+  { icon: Users, label: "Martyrs", value: "1000+", color: "text-accent", note: "This number is updated regularly" },
 ];
 
 const timelinePreview = [
-  { date: "১ জুলাই ২০২৪", title: "কোটা সংস্কার আন্দোলন শুরু", desc: "বিশ্ববিদ্যালয়ের ছাত্ররা কোটা সংস্কারের দাবিতে রাজপথে নামেন।" },
-  { date: "১৬ জুলাই ২০২৪", title: "ব্যাপক সংঘর্ষ", desc: "সারাদেশে পুলিশ ও ছাত্রদের মধ্যে তীব্র সংঘর্ষ হয়।" },
-  { date: "১৯ জুলাই ২০২৪", title: "ইন্টারনেট বন্ধ", desc: "সরকার সারাদেশে ইন্টারনেট সংযোগ বিচ্ছিন্ন করে।" },
-  { date: "৫ আগস্ট ২০২৪", title: "সরকারের পতন", desc: "গণআন্দোলনের মুখে প্রধানমন্ত্রী পদত্যাগ করেন এবং দেশ ত্যাগ করেন।" },
+  { date: "1 July 2024", title: "Quota Reform Movement Begins", desc: "University students take to the streets demanding quota reform." },
+  { date: "16 July 2024", title: "Widespread Clashes", desc: "Fierce clashes erupt between police and students across the country." },
+  { date: "19 July 2024", title: "Internet Shutdown", desc: "The government cuts off internet access nationwide." },
+  { date: "5 August 2024", title: "Fall of the Government", desc: "Faced with the mass movement, the Prime Minister resigns and leaves the country." },
 ];
 
 const Index = () => (
   <Layout>
     {/* Hero */}
     <section className="relative min-h-[90vh] overflow-hidden">
-      <img src={heroBg} alt="জুলাই অভ্যুত্থান" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
+      <img src={heroBg} alt="July Uprising" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
       <div className="absolute inset-0 bg-background/80" />
       <div className="relative z-10 page-container flex items-center min-h-[90vh]">
         <div className="animate-fade-in py-16 md:py-0 w-full">
           <div className="flex items-center gap-4 mb-4">
             <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-primary text-glow-green text-left">
-              জুলাই অভ্যুত্থান
+              July Uprising
             </h1>
             <img
               src={dictatorSmall}
-              alt="স্বৈরাচার"
+              alt="The Autocrat"
               className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full object-cover shrink-0 border-2 border-border"
             />
           </div>
           <p className="text-lg sm:text-xl text-foreground/80 max-w-xl mb-8 text-left">
-            রক্তে রাঙানো পথে, স্বাধীনতার নতুন ভোর — বাংলাদেশের ছাত্র-জনতার অপ্রতিরোধ্য জাগরণ
+            On a path stained with blood, a new dawn of freedom — the unstoppable awakening of Bangladesh's students and people
           </p>
           <div className="gradient-line h-1 w-48 rounded-full" />
         </div>
@@ -62,21 +62,21 @@ const Index = () => (
     <section className="py-16">
       <div className="page-container">
         <h2 className="text-3xl font-bold text-foreground mb-8">
-          <span className="text-accent text-glow-red">মুখ্য</span> ঘটনা
+          <span className="text-accent text-glow-red">Key</span> Event
         </h2>
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="rounded-lg overflow-hidden glow-green">
-            <img src={featuredImg} alt="মুখ্য ঘটনা" className="w-full h-72 object-cover" loading="lazy" width={1280} height={720} />
+            <img src={featuredImg} alt="Key event" className="w-full h-72 object-cover" loading="lazy" width={1280} height={720} />
           </div>
           <div className="animate-fade-in">
-            <p className="text-primary text-sm font-semibold mb-2">৫ আগস্ট ২০২৪</p>
-            <h3 className="text-2xl font-bold text-foreground mb-4">গণজাগরণে সরকারের পতন</h3>
+            <p className="text-primary text-sm font-semibold mb-2">5 August 2024</p>
+            <h3 className="text-2xl font-bold text-foreground mb-4">The Government Falls Amid the Mass Uprising</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              দীর্ঘ ২৬ দিনের আন্দোলনের পর, লক্ষ লক্ষ মানুষের অদম্য সাহস ও ত্যাগের ফলে স্বৈরাচারী সরকারের পতন ঘটে। 
-              এই দিনটি বাংলাদেশের ইতিহাসে একটি নতুন অধ্যায়ের সূচনা করে।
+              After 26 long days of protest, the indomitable courage and sacrifice of millions of people brought down the autocratic government.
+              This day marked the beginning of a new chapter in the history of Bangladesh.
             </p>
             <Link to="/timeline" className="inline-flex items-center gap-2 text-primary hover:underline font-semibold">
-              সম্পূর্ণ টাইমলাইন দেখুন <ArrowRight size={16} />
+              View the full timeline <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -87,7 +87,7 @@ const Index = () => (
     <section className="py-16">
       <div className="page-container">
         <h2 className="text-3xl font-bold text-foreground mb-10">
-          টাইমলাইন <span className="text-primary text-glow-green">প্রিভিউ</span>
+          Timeline <span className="text-primary text-glow-green">Preview</span>
         </h2>
         <div className="space-y-6">
           {timelinePreview.map((item, i) => (
@@ -107,7 +107,7 @@ const Index = () => (
         </div>
         <div className="mt-8 text-center">
           <Link to="/timeline" className="inline-flex items-center gap-2 text-primary hover:underline font-semibold">
-            সম্পূর্ণ টাইমলাইন <ArrowRight size={16} />
+            Full Timeline <ArrowRight size={16} />
           </Link>
         </div>
       </div>

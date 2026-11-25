@@ -12,10 +12,10 @@ const Gallery = () => {
         <div className="page-container">
           <div className="mb-4">
             <h1 className="text-4xl sm:text-5xl font-black text-foreground">
-              <span className="text-primary text-glow-green">গ্যালারি</span>
+              <span className="text-primary text-glow-green">Gallery</span>
             </h1>
             <p className="text-muted-foreground mt-3">
-              জুলাই ২০২৪-এর গণঅভ্যুত্থানের আসল ছবি — Wikimedia Commons থেকে সংগৃহীত ({galleryPhotos.length}টি ছবি)।
+              Authentic photographs of the July 2024 mass uprising — collected from Wikimedia Commons ({galleryPhotos.length} photos).
             </p>
           </div>
 
@@ -40,7 +40,7 @@ const Gallery = () => {
           </div>
 
           <p className="text-muted-foreground text-xs mt-10 text-center">
-            সব ছবি Wikimedia Commons থেকে নেওয়া, প্রতিটি ছবির লেখক ও লাইসেন্স (CC BY / CC BY-SA / CC0) ছবিতে ক্লিক করলে দেখা যাবে।
+            All photos are from Wikimedia Commons. Click on a photo to see its author and licence (CC BY / CC BY-SA / CC0).
           </p>
         </div>
       </section>
@@ -54,7 +54,7 @@ const Gallery = () => {
             <img src={galleryPhotos[selected].src} alt={galleryPhotos[selected].caption} className="w-full rounded-lg" />
             <p className="text-center text-foreground mt-4 text-sm">{galleryPhotos[selected].caption}</p>
             <p className="text-center text-muted-foreground mt-1 text-xs">
-              ছবি: {galleryPhotos[selected].credit} —{" "}
+              Photo: {galleryPhotos[selected].credit} —{" "}
               <a href={galleryPhotos[selected].source} target="_blank" rel="noreferrer" className="underline hover:text-primary">
                 Wikimedia Commons
               </a>

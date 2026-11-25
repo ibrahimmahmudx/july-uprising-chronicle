@@ -3,11 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "হোম", path: "/" },
-  { label: "টাইমলাইন", path: "/timeline" },
-  { label: "গ্যালারি", path: "/gallery" },
-  { label: "সম্পর্কে", path: "/about" },
-  { label: "শহীদ", path: "/martyrs" },
+  { label: "Home", path: "/" },
+  { label: "Timeline", path: "/timeline" },
+  { label: "Gallery", path: "/gallery" },
+  { label: "About", path: "/about" },
+  { label: "Martyrs", path: "/martyrs" },
 ];
 
 const Navbar = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="page-container flex items-center justify-between h-16">
         <Link to="/" className="text-xl font-bold text-primary text-glow-green">
-          জুলাই অভ্যুত্থান
+          July Uprising
         </Link>
 
         {/* Desktop */}
