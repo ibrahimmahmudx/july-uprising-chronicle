@@ -2,10 +2,49 @@ import { useState } from "react";
 import Layout from "@/components/Layout";
 import { X, Search } from "lucide-react";
 import { galleryPhotos } from "@/data/gallery";
+import { useLang, type Lang } from "@/i18n";
 
 const PAGE_SIZE = 60;
 
+const T: Record<
+  Lang,
+  {
+    heading: string;
+    intro: (count: number) => string;
+    searchPlaceholder: string;
+    empty: string;
+    loadMore: (shown: number, total: number) => string;
+    footerNote: string;
+    photoLabel: string;
+  }
+> = {
+  en: {
+    heading: "Gallery",
+    intro: (count) =>
+      `Authentic photographs of the July 2024 mass uprising — collected from Wikimedia Commons (${count} photos).`,
+    searchPlaceholder: "Search photos or photographers…",
+    empty: "No photos match your search.",
+    loadMore: (shown, total) => `Load more photos (${shown} of ${total})`,
+    footerNote:
+      "All photos are from Wikimedia Commons. Click on a photo to see its author and licence (CC BY / CC BY-SA / CC0).",
+    photoLabel: "Photo",
+  },
+  bn: {
+    heading: "গ্যালারি",
+    intro: (count) =>
+      `জুলাই ২০২৪-এর গণঅভ্যুত্থানের আসল ছবি — Wikimedia Commons থেকে সংগৃহীত (${count}টি ছবি)।`,
+    searchPlaceholder: "ছবি বা আলোকচিত্রী খুঁজুন…",
+    empty: "আপনার খোঁজের সাথে মিলে এমন কোনো ছবি পাওয়া যায়নি।",
+    loadMore: (shown, total) => `আরও ছবি দেখুন (${total}টির মধ্যে ${shown}টি দেখানো হয়েছে)`,
+    footerNote:
+      "সব ছবি Wikimedia Commons থেকে নেওয়া। ছবিতে ক্লিক করলে আলোকচিত্রীর নাম ও লাইসেন্স (CC BY / CC BY-SA / CC0) দেখা যাবে।",
+    photoLabel: "ছবি",
+  },
+};
+
 const Gallery = () => {
+  const { lang } = useLang();
+  const t = T[lang];
   const [selected, setSelected] = useState<number | null>(null);
   const [query, setQuery] = useState("");
   const [visible, setVisible] = useState(PAGE_SIZE);
@@ -24,10 +63,10 @@ const Gallery = () => {
         <div className="page-container">
           <div className="mb-4">
             <h1 className="text-4xl sm:text-5xl font-black text-foreground">
-              <span className="text-primary text-glow-green">Gallery</span>
+              <span className="text-primary text-glow-green">{t.heading}</span>
             </h1>
             <p className="text-muted-foreground mt-3">
-              Authentic photographs of the July 2024 mass uprising — collected from Wikimedia Commons ({galleryPhotos.length} photos).
+              {t.intro(galleryPhotos.length)}
             </p>
           </div>
 
@@ -40,7 +79,7 @@ const Gallery = () => {
                 setQuery(e.target.value);
                 setVisible(PAGE_SIZE);
               }}
-              placeholder="Search photos or photographers…"
+              placeholder={t.searchPlaceholder}
               className="w-full bg-card border border-border rounded-lg pl-10 pr-4 py-2.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50"
             />
           </div>
@@ -66,7 +105,7 @@ const Gallery = () => {
           </div>
 
           {filtered.length === 0 && (
-            <p className="text-muted-foreground text-center py-10">No photos match your search.</p>
+            <p className="text-muted-foreground text-center py-10">{t.empty}</p>
           )}
 
           {visible < filtered.length && (
@@ -75,13 +114,13 @@ const Gallery = () => {
                 onClick={() => setVisible((v) => v + PAGE_SIZE)}
                 className="bg-card border border-border hover:border-primary/50 text-foreground font-semibold px-8 py-3 rounded-lg transition-colors"
               >
-                Load more photos ({shown.length} of {filtered.length})
+                {t.loadMore(shown.length, filtered.length)}
               </button>
             </div>
           )}
 
           <p className="text-muted-foreground text-xs mt-10 text-center">
-            All photos are from Wikimedia Commons. Click on a photo to see its author and licence (CC BY / CC BY-SA / CC0).
+            {t.footerNote}
           </p>
         </div>
       </section>
@@ -95,7 +134,7 @@ const Gallery = () => {
             <img src={shown[selected].src} alt={shown[selected].caption} className="w-full rounded-lg" />
             <p className="text-center text-foreground mt-4 text-sm">{shown[selected].caption}</p>
             <p className="text-center text-muted-foreground mt-1 text-xs">
-              Photo: {shown[selected].credit} —{" "}
+              {t.photoLabel}: {shown[selected].credit} —{" "}
               <a href={shown[selected].source} target="_blank" rel="noreferrer" className="underline hover:text-primary">
                 Wikimedia Commons
               </a>
