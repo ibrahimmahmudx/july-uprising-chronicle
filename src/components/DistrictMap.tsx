@@ -25,7 +25,7 @@ const DistrictMap = () => {
                 d={d.paths.join(" ")}
                 className="cursor-pointer transition-opacity duration-150"
                 style={{
-                  fill: "hsl(0 100% 59%)",
+                  fill: "hsl(348 84% 40%)",
                   fillOpacity: d.count === 0 ? 0.05 : 0.12 + 0.83 * Math.sqrt(d.count / MAX),
                   stroke: "hsl(var(--border))",
                   strokeWidth: 0.7,

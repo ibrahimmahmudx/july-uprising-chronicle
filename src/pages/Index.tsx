@@ -136,12 +136,12 @@ const Index = () => {
       {/* Hero */}
       <section className="relative min-h-[90vh] overflow-hidden">
         <img src={heroBg} alt={t.heroAlt} className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
-        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
         <div className="relative z-10 page-container flex items-center min-h-[90vh]">
           <div className="animate-fade-in py-16 md:py-0 w-full">
             <div className="flex items-center gap-4 mb-4">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-primary text-glow-green text-left">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white text-left">
                 {t.heroTitle}
               </h1>
               <img
@@ -150,25 +150,25 @@ const Index = () => {
                 className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full object-cover shrink-0 border-2 border-border"
               />
             </div>
-            <p className="text-lg sm:text-xl text-foreground/80 max-w-xl mb-8 text-left">
+            <p className="text-lg sm:text-xl text-white/85 max-w-xl mb-8 text-left">
               {t.heroSubtitle}
             </p>
             <div className="gradient-line h-1 w-48 rounded-full" />
           </div>
         </div>
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-primary scroll-cue">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-white scroll-cue">
           <ChevronDown size={28} />
         </div>
       </section>
 
       {/* Martyrs name ticker */}
-      <section className="border-b border-border bg-card/50 py-4 overflow-hidden" aria-label="Names of the martyrs">
+      <section className="border-b border-border bg-foreground py-4 overflow-hidden" aria-label="Names of the martyrs">
         <p className="text-center text-accent text-xs font-semibold tracking-widest mb-2">
           {lang === "bn"
             ? `${toBnDigits(martyrsData.length)} শহীদের স্মরণে`
             : `IN MEMORY OF THE ${martyrsData.length} MARTYRS`}
         </p>
-        <div className="marquee-track text-muted-foreground text-sm">
+        <div className="marquee-track text-white/70 text-sm">
           {[0, 1].map((half) => (
             <span key={half} className="inline-flex">
               {martyrsData.map((m, i) => (

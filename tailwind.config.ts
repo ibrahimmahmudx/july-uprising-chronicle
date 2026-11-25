@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        bengali: ['"Hind Siliguri"', '"Noto Sans Bengali"', 'sans-serif'],
-        display: ['"Space Grotesk"', '"Hind Siliguri"', '"Noto Sans Bengali"', 'sans-serif'],
+        bengali: ['"Noto Serif Bengali"', '"Hind Siliguri"', '"Noto Sans Bengali"', 'serif'],
+        display: ['"Playfair Display"', '"Noto Serif Bengali"', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
