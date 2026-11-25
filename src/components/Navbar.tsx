@@ -19,7 +19,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="page-container flex items-center justify-between h-16">
-        <Link to="/" className="text-xl font-bold text-primary text-glow-green">
+        <Link to="/" className="flex items-center gap-2.5 text-xl font-bold text-primary text-glow-green">
+          <img src="/logo.svg" alt="July Uprising logo" className="w-9 h-9" width={36} height={36} />
           {lang === "bn" ? "জুলাই অভ্যুত্থান" : "July Uprising"}
         </Link>
 
