@@ -1,19 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Rising red sun of freedom -->
-  <circle cx="32" cy="29" r="16" fill="#ff3838"/>
-  <!-- Shaheed Minar silhouette in green -->
-  <g fill="#00e67a">
-    <!-- central spire -->
-    <path d="M32 6 L37 45 L27 45 Z"/>
-    <!-- left slanted pillar -->
-    <path d="M21.5 20 L27.5 45 L18.5 45 Z"/>
-    <!-- right slanted pillar -->
-    <path d="M42.5 20 L45.5 45 L36.5 45 Z"/>
-    <!-- outer short pillars -->
-    <path d="M13 30 L17.5 45 L10.5 45 Z"/>
-    <path d="M51 30 L53.5 45 L46.5 45 Z"/>
-    <!-- base -->
-    <rect x="8" y="45" width="48" height="4" rx="1.5"/>
-    <rect x="13" y="51" width="38" height="3" rx="1.5"/>
-  </g>
+  <circle cx="32" cy="32" r="29" fill="#00e67a"/>
+  <circle cx="32" cy="32" r="23.5" fill="#ff3838"/>
+  <text x="32" y="43" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">36</text>
 </svg>
