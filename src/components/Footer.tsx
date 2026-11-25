@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-border py-12 mt-20">
       <div className="page-container text-center">
-        <p className="text-primary font-bold text-lg text-glow-green mb-2">
+        <p className="text-primary font-black text-3xl text-glow-green mb-2">
           {lang === "bn" ? "জুলাই অভ্যুত্থান" : "July Uprising"}
         </p>
         <p className="text-muted-foreground text-sm">

@@ -4,7 +4,8 @@ import { heroBg } from "@/data/heroImage";
 import { martyrsData } from "@/data/martyrs";
 import featuredImg from "@/assets/featured-event.jpg";
 import dictatorSmall from "@/assets/dictator-small.png";
-import { Calendar, Clock, Users, ArrowRight } from "lucide-react";
+import { Calendar, Clock, Users, ArrowRight, ChevronDown } from "lucide-react";
+import Reveal from "@/components/Reveal";
 import { useLang, toBnDigits, type Lang } from "@/i18n";
 
 const T: Record<
@@ -136,6 +137,7 @@ const Index = () => {
       <section className="relative min-h-[90vh] overflow-hidden">
         <img src={heroBg} alt={t.heroAlt} className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
         <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
         <div className="relative z-10 page-container flex items-center min-h-[90vh]">
           <div className="animate-fade-in py-16 md:py-0 w-full">
             <div className="flex items-center gap-4 mb-4">
@@ -153,6 +155,9 @@ const Index = () => {
             </p>
             <div className="gradient-line h-1 w-48 rounded-full" />
           </div>
+        </div>
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-primary scroll-cue">
+          <ChevronDown size={28} />
         </div>
       </section>
 
@@ -178,6 +183,7 @@ const Index = () => {
 
       {/* Stats */}
       <section className="py-20">
+        <Reveal>
         <div className="page-container grid grid-cols-1 sm:grid-cols-3 gap-6">
           {stats.map((s) => (
             <div key={s.label} className="bg-card border border-border rounded-lg p-8 text-center animate-slide-up hover:glow-green transition-shadow duration-300">
@@ -188,6 +194,7 @@ const Index = () => {
             </div>
           ))}
         </div>
+        </Reveal>
       </section>
 
       {/* Featured */}
@@ -217,7 +224,8 @@ const Index = () => {
       {/* Featured: Nahid Islam */}
       <section className="py-16">
         <div className="page-container">
-          <div className="grid md:grid-cols-3 gap-8 items-center bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors duration-300">
+          <Reveal>
+        <div className="grid md:grid-cols-3 gap-8 items-center bg-card border border-border rounded-2xl p-8 hover:border-primary/30 hover:-translate-y-1 hover:glow-green transition-all duration-300">
             <div className="rounded-lg overflow-hidden glow-green">
               <img
                 src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Nahid_Islam_in_2024.jpg/960px-Nahid_Islam_in_2024.jpg"
@@ -248,6 +256,7 @@ const Index = () => {
               </p>
             </div>
           </div>
+        </Reveal>
         </div>
       </section>
 
@@ -257,6 +266,7 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-foreground mb-10">
             {t.timelinePreviewKey} <span className="text-primary text-glow-green">{t.timelinePreviewRest}</span>
           </h2>
+          <Reveal>
           <div className="space-y-6">
             {timelinePreview.map((item, i) => (
               <div
@@ -273,6 +283,7 @@ const Index = () => {
               </div>
             ))}
           </div>
+          </Reveal>
           <div className="mt-8 text-center">
             <Link to="/timeline" className="inline-flex items-center gap-2 text-primary hover:underline font-semibold">
               {t.fullTimeline} <ArrowRight size={16} />

@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import { User, Search } from "lucide-react";
 import { martyrsData } from "@/data/martyrs";
 import DistrictMap from "@/components/DistrictMap";
+import Reveal from "@/components/Reveal";
 import { useLang, toBnDigits, type Lang } from "@/i18n";
 
 const T: Record<
@@ -79,7 +80,9 @@ const Martyrs = () => {
           </p>
 
           <div className="mb-10">
-            <DistrictMap />
+            <Reveal>
+              <DistrictMap />
+            </Reveal>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
