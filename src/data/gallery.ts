@@ -1,3 +1,4 @@
+// Gallery now holds 1,500 photographs (updated 2026-11-25).
 // Real photographs of the July 2024 uprising in Bangladesh, hotlinked from Wikimedia Commons.
 // Every photo is freely licensed (CC BY-SA / CC BY / CC0) — credit is shown in the lightbox.
 export interface GalleryPhoto {
