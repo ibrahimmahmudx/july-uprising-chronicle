@@ -1,8 +1,17 @@
+import { useState } from "react";
 import Layout from "@/components/Layout";
-import { User } from "lucide-react";
+import { User, Search } from "lucide-react";
 import { martyrsData } from "@/data/martyrs";
 
 const Martyrs = () => {
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+  const filtered = q
+    ? martyrsData.filter(
+        (m) => m.name.includes(query.trim()) || m.district.toLowerCase().includes(q)
+      )
+    : martyrsData;
+
   return (
     <Layout>
       <section className="py-20">
@@ -17,8 +26,22 @@ const Martyrs = () => {
             script, as printed in the gazette.
           </p>
 
+          <div className="relative max-w-md mb-4">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search by name (Bengali) or district…"
+              className="w-full bg-card border border-border rounded-lg pl-10 pr-4 py-2.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent/50"
+            />
+          </div>
+          <p className="text-muted-foreground text-sm mb-6">
+            Showing {filtered.length} of {martyrsData.length} martyrs
+          </p>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-            {martyrsData.map((m, i) => (
+            {filtered.map((m, i) => (
               <div
                 key={i}
                 className="bg-card border border-border rounded-lg p-4 text-center hover:border-accent/30 transition-colors duration-300 animate-fade-in"
@@ -32,6 +55,10 @@ const Martyrs = () => {
               </div>
             ))}
           </div>
+
+          {filtered.length === 0 && (
+            <p className="text-muted-foreground text-center py-10">No martyr matches your search.</p>
+          )}
 
           <p className="text-muted-foreground text-xs mt-10 text-center">
             Source: Bangladesh Gazette (Extraordinary), "July–August Mass Uprising 2024 Martyrs Gazette",

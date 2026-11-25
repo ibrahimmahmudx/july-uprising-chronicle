@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { heroBg } from "@/data/heroImage";
+import { martyrsData } from "@/data/martyrs";
 import featuredImg from "@/assets/featured-event.jpg";
 import dictatorSmall from "@/assets/dictator-small.png";
 import { Calendar, Clock, Users, ArrowRight } from "lucide-react";
@@ -41,6 +42,22 @@ const Index = () => (
           </p>
           <div className="gradient-line h-1 w-48 rounded-full" />
         </div>
+      </div>
+    </section>
+
+    {/* Martyrs name ticker */}
+    <section className="border-b border-border bg-card/50 py-4 overflow-hidden" aria-label="Names of the martyrs">
+      <p className="text-center text-accent text-xs font-semibold tracking-widest mb-2">IN MEMORY OF THE {martyrsData.length} MARTYRS</p>
+      <div className="marquee-track text-muted-foreground text-sm">
+        {[0, 1].map((half) => (
+          <span key={half} className="inline-flex">
+            {martyrsData.map((m, i) => (
+              <span key={i} className="mx-3">
+                {m.name} <span className="text-accent mx-1">•</span>
+              </span>
+            ))}
+          </span>
+        ))}
       </div>
     </section>
 

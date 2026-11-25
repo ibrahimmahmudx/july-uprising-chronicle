@@ -5,6 +5,13 @@ const Footer = () => (
       <p className="text-muted-foreground text-sm">
         In memory, in reverence, in resolve — the student-people's uprising of Bangladesh, 2024
       </p>
+      <div className="mt-6 flex items-center justify-center gap-3">
+        <span className="text-muted-foreground text-sm">Share this memorial:</span>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjuly-uprising-chronicle.vercel.app%2F" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary text-sm font-medium">Facebook</a>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjuly-uprising-chronicle.vercel.app%2F&text=July%20Uprising%20%E2%80%94%20Bangladesh%27s%202024%20Student-People%27s%20Mass%20Uprising" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary text-sm font-medium">X</a>
+        <a href="https://wa.me/?text=July%20Uprising%20%E2%80%94%20Bangladesh%27s%202024%20mass%20uprising%20memorial%3A%20https%3A%2F%2Fjuly-uprising-chronicle.vercel.app%2F" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary text-sm font-medium">WhatsApp</a>
+        <a href="https://t.me/share/url?url=https%3A%2F%2Fjuly-uprising-chronicle.vercel.app%2F&text=July%20Uprising%20%E2%80%94%20Bangladesh%27s%202024%20mass%20uprising%20memorial" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary text-sm font-medium">Telegram</a>
+      </div>
       <p className="text-muted-foreground text-sm mt-6">
         Created by{" "}
         <a
