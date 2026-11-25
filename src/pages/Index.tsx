@@ -83,6 +83,49 @@ const Index = () => (
       </div>
     </section>
 
+    {/* Featured: Nahid Islam */}
+    <section className="py-16">
+      <div className="page-container">
+        <div className="grid md:grid-cols-3 gap-8 items-center bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors duration-300">
+          <div className="rounded-lg overflow-hidden glow-green">
+            <img
+              src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Nahid_Islam_in_2024.jpg/960px-Nahid_Islam_in_2024.jpg"
+              alt="Nahid Islam"
+              className="w-full h-96 object-cover object-top"
+              loading="lazy"
+              width={960}
+              height={1329}
+            />
+            <p className="text-muted-foreground/60 text-[11px] mt-2">
+              Photo: Nahid Hossain / CC BY-SA 4.0 — Wikimedia Commons
+            </p>
+          </div>
+          <div className="md:col-span-2 animate-fade-in">
+            <p className="text-primary text-sm font-semibold mb-2">3 August 2024 — The Turning Point</p>
+            <h3 className="text-3xl font-bold text-foreground mb-1">Nahid Islam</h3>
+            <p className="text-accent font-semibold mb-4">The Voice of the One-Point Demand</p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              As a central coordinator of the Anti-Discrimination Student Movement, Nahid Islam became the
+              strategic mind and public face of the uprising's decisive phase. While the regime answered
+              protests with bullets, internet blackouts and mass arrests, it was his calm, disciplined
+              leadership that kept a generation united behind a single demand.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              On 3 August 2024, standing before a sea of protesters at the Central Shaheed Minar in Dhaka,
+              he announced the movement's <span className="text-foreground font-semibold">one-point demand</span>:
+              the resignation of Sheikh Hasina and her government. That single declaration transformed a
+              quota-reform protest into a nationwide uprising — within two days, fifteen years of
+              authoritarian rule collapsed.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              After the victory, he joined the interim government as an adviser, carrying the uprising's
+              mandate into the work of rebuilding the state.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     {/* Timeline Preview */}
     <section className="py-16">
       <div className="page-container">
