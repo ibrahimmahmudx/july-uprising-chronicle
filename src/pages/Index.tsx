@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import heroBg from "@/assets/hero-bg.jpg";
+import { heroBg } from "@/data/heroImage";
 import featuredImg from "@/assets/featured-event.jpg";
 import dictatorSmall from "@/assets/dictator-small.png";
 import { Calendar, Clock, Users, ArrowRight } from "lucide-react";
